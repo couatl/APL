@@ -257,9 +257,10 @@ public:
     typedef node<val_type> Node;
     typedef deque_iterator<val_type, val_type&, val_type*> iterator;
     typedef deque_iterator<val_type, const val_type&, const val_type*> const_iterator;
-
+ 
     deque() //default
-            :deque_base(), rAccessIterator(nullptr, nullptr, nullptr, this)
+            :deque_base(), rAccessIterator(nullptr, nullptr, nullptr, this), _start(nullptr, nullptr, nullptr, this),
+              _finish(nullptr, nullptr, nullptr, this)
     { }
 
     deque(size_t n) //fill
@@ -273,6 +274,8 @@ public:
             {
                 rAccessIterator++;
             }
+            _start(t, t, rAccessIterator._last, this);
+            _finish(rAccessIterator._last, t, rAccessIterator._last, this);
         }
     }
     deque(size_t n, const val_type& var) //fill 2.0
@@ -288,10 +291,13 @@ public:
                 rAccessIterator++;
                 rAccessIterator._cur->_value = var;
             }
+            _start(t, t, rAccessIterator._last, this);
+            _finish(rAccessIterator._last, t, rAccessIterator._last, this);
         }
     }
     deque(deque && move) //move
-        :deque_base(), rAccessIterator(nullptr, nullptr, nullptr, this)
+        :deque_base(), rAccessIterator(nullptr, nullptr, nullptr, this), _start(nullptr, nullptr, nullptr, this),
+          _finish(nullptr, nullptr, nullptr, this)
     {
         this->swap(move);
     }
@@ -313,33 +319,27 @@ public:
     }
     iterator begin()
     {
-        static iterator it(rAccessIterator._first, nullptr, nullptr, nullptr);
-        return it;
+        return _start;
     }
     const_iterator begin() const
     {
-        static const_iterator it(rAccessIterator._first, nullptr, nullptr, nullptr);
-        return it;
+        return _start;
     }
     iterator end()
     {
-        static iterator it(rAccessIterator._last, nullptr, nullptr, nullptr);
-        return it;
+        return _finish;
     }
     const_iterator end() const
     {
-        static const_iterator it(rAccessIterator._last, nullptr, nullptr, nullptr);
-        return it;
+        return _finish;
     }
     const_iterator cend() const
     {
-        static const_iterator it(rAccessIterator._last, nullptr, nullptr, nullptr);
-        return it;
+        return _finish;
     }
     const_iterator cbegin() const
     {
-        static const_iterator it(rAccessIterator._first, nullptr, nullptr, nullptr);
-        return it;
+        return _start;
     }
     deque& operator= (const deque& Obj)
     {
@@ -373,7 +373,10 @@ public:
                 rAccessIterator++;
                 i++;
             }
-            this->erase(this->begin(), this->end());
+            _finish._last = rAccessIterator._last;
+            _finish._cur = rAccessIterator._last;
+            this->erase(rAccessIterator, this->end());
+
         }
         else if (n < _maxsize)
         {
@@ -384,6 +387,8 @@ public:
                 rAccessIterator++;
                 i++;
             }
+            _finish._last = rAccessIterator._last;
+            _finish._cur = rAccessIterator._last;
         }
     }
     bool empty()
@@ -436,11 +441,13 @@ public:
     }
     void push_front (const val_type& val)
     {
-        if (!rAccessIterator._first)
+        if (deque_base::_buff_size == 0)
         {
             rAccessIterator._first = new Node(val, nullptr, nullptr, this);
             rAccessIterator._cur = rAccessIterator._first;
             rAccessIterator._last = rAccessIterator._first;
+            _start = rAccessIterator;
+            _finish = rAccessIterator;
         }
         else
         {
@@ -448,29 +455,39 @@ public:
             rAccessIterator._first->_prev = t;
             rAccessIterator._first = t;
             rAccessIterator._cur = t;
+            _start = rAccessIterator;
+            _finish._first = rAccessIterator._first;
         }
     }
     void push_back (const val_type& val)
     {
-        if (!rAccessIterator._first)
+        if (deque_base::_buff_size == 0)
         {
             rAccessIterator._first = new Node(val, nullptr, nullptr, this);
             rAccessIterator._cur = rAccessIterator._first;
             rAccessIterator._last = rAccessIterator._first;
+            _start = rAccessIterator;
+            _finish = rAccessIterator;
         }
         else
         {
-            rAccessIterator._cur = rAccessIterator._last;
-            rAccessIterator++;
-            rAccessIterator._cur->_value = val;
+            Node *t = new Node(val, nullptr, rAccessIterator._last, this);
+            rAccessIterator._last->_next = t;
+            rAccessIterator._last = t;
+            rAccessIterator._cur = t;
+            _finish = rAccessIterator;
+            _start._last = rAccessIterator._last;
         }
     }
     void pop_back()
     {
-        if(!rAccessIterator._first) return;
+        if(deque_base::_buff_size == 0) return;
         Node *t = rAccessIterator._last;
         rAccessIterator._last = rAccessIterator._last->_prev;
+        _finish._last = _finish._last->_prev;
+        _finish._last->_next = nullptr;
         rAccessIterator._last->_next = nullptr;
+        _start._last = _finish._last;
         delete t;
     }
     void pop_front()
@@ -479,6 +496,9 @@ public:
         Node *t = rAccessIterator._first;
         rAccessIterator._first = rAccessIterator._first->_next;
         rAccessIterator._first->_prev = nullptr;
+        _start._first = _start._first->_next;
+        _start._first->_prev = nullptr;
+        _finish._first = _start._first;
         delete t;
     }
     void clear()
@@ -499,43 +519,52 @@ public:
             rAccessIterator._first = new Node(val, nullptr, nullptr, this);
             rAccessIterator._cur = rAccessIterator._first;
             rAccessIterator._last = rAccessIterator._first;
+            _start = rAccessIterator;
             for (size_t i = 0; i<n; i++)
             {
                 rAccessIterator++;
                 rAccessIterator._cur->_value = val;
             }
+            _finish = rAccessIterator;
+            _start._last = rAccessIterator._last;
         }
     }
     iterator insert (const_iterator position, const val_type& val)
     {
-        static iterator it(rAccessIterator._first);
+        iterator it(rAccessIterator._first, rAccessIterator._first, rAccessIterator._last, this);
         while (it!=position)
             it++;
-        it._cur->_value = val;
-        return it;
-    }
-    iterator insert (const_iterator position, size_t n, const val_type& val)
-    {
-        static iterator it(rAccessIterator._first, rAccessIterator._first, rAccessIterator._last, this);
-        while (it!=position)
-            it++;
-        for (size_t i = 0; i < n; i++)
-        {
-            it._cur->_value = val;
-            ++it;
-        }
+        Node *t = new Node(val, it._cur, it._cur->_prev, this);
+        it._cur->_prev->_next = t;
+        it._cur->_prev = t;
         return it;
     }
     template <class InputIterator>
     iterator insert (const_iterator position, InputIterator first, InputIterator last)
     {
-        static iterator it(rAccessIterator._first, rAccessIterator._first, rAccessIterator._last, this);
+        iterator it(rAccessIterator._first, rAccessIterator._first, rAccessIterator._last, this);
         while (it!=position)
             it++;
+        Node **t_array;
+        size_t n = 0;
         for (auto i = first; i != last; ++i)
         {
-            it._cur->_value = *i;
-            ++it;
+            n++;
+        }
+        t_array = new Node*[n];
+
+        size_t k = 0;
+        for (auto i = first; i != last; ++i, k++)
+        {
+            t_array[k] = new Node(*first, nullptr, nullptr, this);
+        }
+        t_array[0]->_prev = it._cur;
+        it._cur->_next = t_array[0];
+        it._cur->_next->_prev = t_array[n];
+        for (k = 1; k<(n-1); k++)
+        {
+            t_array[k]->_prev = t_array[k-1];
+            t_array[k]->_next = t_array[k+1];
         }
         return it;
     }
@@ -582,6 +611,8 @@ public:
     }
 private:
     iterator rAccessIterator;
+    iterator _start;
+    iterator _finish;
 };
 
 template <class val_type>
