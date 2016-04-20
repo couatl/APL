@@ -158,21 +158,21 @@ struct deque_iterator
 };
 //без поддержки работы с const_iterator/iterator
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 inline bool operator== (const deque_iterator<val_type, val_type&, val_type*>& it1,
                         const deque_iterator<val_type, val_type&, val_type*>& it2)
 {
     return it1._cur == it2._cur;
 }
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 inline bool operator!= (const deque_iterator<val_type, val_type&, val_type*>& it1,
                         const deque_iterator<val_type, val_type&, val_type*>& it2)
 {
     return !(it1._cur == it2._cur);
 }
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 bool operator< (const deque_iterator<val_type, val_type&, val_type*>& it1,
                 const deque_iterator<val_type, val_type&, val_type*>& it2)
 {
@@ -193,14 +193,14 @@ bool operator< (const deque_iterator<val_type, val_type&, val_type*>& it1,
     return i1<i2;
 }
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 bool operator> (const deque_iterator<val_type, val_type&, val_type*>& it1,
                 const deque_iterator<val_type, val_type&, val_type*>& it2)
 {
     return !(it1<it2);
 }
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 bool operator<= (const deque_iterator<val_type, val_type&, val_type*>& it1,
                  const deque_iterator<val_type, val_type&, val_type*>& it2)
 {
@@ -209,7 +209,7 @@ bool operator<= (const deque_iterator<val_type, val_type&, val_type*>& it1,
     return it1<it2;
 }
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 bool operator>= (const deque_iterator<val_type, val_type&, val_type*>& it1,
                  const deque_iterator<val_type, val_type&, val_type*>& it2)
 {
@@ -218,7 +218,7 @@ bool operator>= (const deque_iterator<val_type, val_type&, val_type*>& it1,
     return !(it1<it2);
 }
 
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 ptrdiff_t operator-(const deque_iterator<val_type, val_type&, val_type*> it1,
                     const deque_iterator<val_type, val_type&, val_type*> it2)
 {
@@ -240,7 +240,7 @@ ptrdiff_t operator-(const deque_iterator<val_type, val_type&, val_type*> it1,
 }
 
 //operator вида 5 + it
-template <class val_type, val_type&, val_type*>
+template <class val_type>
 deque_iterator<val_type, val_type&, val_type*> operator+ (ptrdiff_t n, deque_iterator<val_type, val_type&, val_type*> it)
 {
     for (ptrdiff_t i = 0; i < n; i++)
