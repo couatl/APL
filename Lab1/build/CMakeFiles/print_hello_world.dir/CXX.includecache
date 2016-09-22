@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/print_hello_world.h
+iostream
+-
+
+//Users/sharlina/Desktop/example/sources/print_hello_world.cpp
+print_hello_world.h
+-
+
