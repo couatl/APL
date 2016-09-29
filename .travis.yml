@@ -6,5 +6,6 @@ matrix:
       env: COMPILER=clang++ -std=c++11
 
 script:
-  - cd Lab1 && cd build
+  - cd Lab1
+  - mkdir build && cd build
   - cmake .. && make
