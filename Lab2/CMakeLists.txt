@@ -7,7 +7,7 @@ set(SOURCE_EXE examples/main.cpp)
 		
 set(SOURCE_LIB sources/prime_check.cpp)	
 
-set(TESTS_SOURCE tests/my_test.cpp)
+set(TESTS_SOURCE tests/main.cpp)
 
 add_library(prime_check STATIC ${SOURCE_LIB})	
 
