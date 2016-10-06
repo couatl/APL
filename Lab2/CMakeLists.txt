@@ -17,3 +17,6 @@ add_executable(tests ${TESTS_SOURCE})
 
 target_link_libraries(main prime_check)		
 
+target_link_libraries(tests prime_check)		
+
+
