@@ -13,7 +13,7 @@ add_library(prime_check STATIC ${SOURCE_LIB})
 
 add_executable(main ${SOURCE_EXE})	
 
-add_executable(tests ${TESTS_SOURCE} tests/my_test.cpp)
+add_executable(tests ${TESTS_SOURCE})
 
 target_link_libraries(main prime_check)		
 
