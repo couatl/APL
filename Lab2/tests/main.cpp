@@ -1,3 +1,4 @@
+#define CATCH_CONFIG_MAIN
 #include "../include/prime_check.h"
 #include "catch.hpp"
 
