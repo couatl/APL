@@ -1,4 +1,4 @@
-#include "../Lab2/include/prime_check.h"
+#include "../include/prime_check.h"
 #include "catch.hpp"
 
 SCENARIO("if number is negative")
