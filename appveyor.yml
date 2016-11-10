@@ -1,0 +1,26 @@
+platform:
+    - x86
+    - x64
+
+environment:
+    matrix:
+        - VSVER: 14
+
+before_build:
+    - ps: >-
+        If ($env:Platform -Match "x86") {
+            $env:VCVARS_PLATFORM="x86"
+            $env:TARGET="VC-WIN32"
+        } Else {
+            $env:VCVARS_PLATFORM="amd64"
+            $env:TARGET="VC-WIN64A"
+        }
+
+    - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
+
+build_script:
+  - cd Lab2
+  - mkdir build && cd build
+  - cmake .. -G "NMake Makefiles"
+  - nmake
+  - ./tests -s -r compact
