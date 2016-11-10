@@ -17,10 +17,11 @@ before_build:
         }
 
     - ps: $env:VSCOMNTOOLS=(Get-Content ("env:VS" + "$env:VSVER" + "0COMNTOOLS"))
+    - call "%VSCOMNTOOLS%\..\..\VC\vcvarsall.bat" %VCVARS_PLATFORM%
 
 build_script:
   - cd Lab2
   - mkdir build && cd build
   - cmake .. -G "NMake Makefiles"
   - nmake
-  - ./tests -s -r compact
+  - tests -s -r compact
