@@ -1,0 +1,285 @@
+\hypertarget{structdeque__iterator}{}\section{deque\+\_\+iterator$<$ val\+\_\+type, ref, ptr $>$ Class Template Reference}
+\label{structdeque__iterator}\index{deque\+\_\+iterator$<$ val\+\_\+type, ref, ptr $>$@{deque\+\_\+iterator$<$ val\+\_\+type, ref, ptr $>$}}
+
+
+Class implemention of iterator of deque.  
+
+
+
+
+{\ttfamily \#include $<$deque.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structdeque__iterator_a9c79caebc3c261e2bb96cff829a7f715}{}\label{structdeque__iterator_a9c79caebc3c261e2bb96cff829a7f715} 
+typedef \hyperlink{structnode}{node}$<$ val\+\_\+type $>$ {\bfseries Node}
+\item 
+\hypertarget{structdeque__iterator_ad9cb8dfbd5ae3f72ffb26133e0b80fd5}{}\label{structdeque__iterator_ad9cb8dfbd5ae3f72ffb26133e0b80fd5} 
+typedef \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$ $>$ {\bfseries iterator}
+\item 
+\hypertarget{structdeque__iterator_a6a0273686d63d0086a4cd853de840652}{}\label{structdeque__iterator_a6a0273686d63d0086a4cd853de840652} 
+typedef \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, const val\+\_\+type \&, const val\+\_\+type $\ast$ $>$ {\bfseries const\+\_\+iterator}
+\item 
+\hypertarget{structdeque__iterator_a76ad6c943c498996efacfb39d455b2ee}{}\label{structdeque__iterator_a76ad6c943c498996efacfb39d455b2ee} 
+typedef \hyperlink{classdeque__base}{deque\+\_\+base} {\bfseries \+\_\+deque}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structdeque__iterator_aa5f3b1440b64538a1979b1c266b4a1ff}{}\label{structdeque__iterator_aa5f3b1440b64538a1979b1c266b4a1ff} 
+\hyperlink{structdeque__iterator_aa5f3b1440b64538a1979b1c266b4a1ff}{deque\+\_\+iterator} (\hyperlink{structnode}{Node} $\ast$base)
+\begin{DoxyCompactList}\small\item\em Constructs a deque from one base node. \end{DoxyCompactList}\item 
+\hypertarget{structdeque__iterator_a457004a94b85b521634813bb75a3dd1d}{}\label{structdeque__iterator_a457004a94b85b521634813bb75a3dd1d} 
+\hyperlink{structdeque__iterator_a457004a94b85b521634813bb75a3dd1d}{deque\+\_\+iterator} (\hyperlink{structnode}{Node} $\ast$cur, \hyperlink{structnode}{Node} $\ast$first, \hyperlink{classdeque__base}{\+\_\+deque} $\ast$base)
+\begin{DoxyCompactList}\small\item\em Constructor for initialazing a deque with begin but not with an end. \end{DoxyCompactList}\item 
+\hypertarget{structdeque__iterator_ab48955425cddfe781c32b0c44e0f7121}{}\label{structdeque__iterator_ab48955425cddfe781c32b0c44e0f7121} 
+\hyperlink{structdeque__iterator_ab48955425cddfe781c32b0c44e0f7121}{deque\+\_\+iterator} (\hyperlink{structnode}{Node} $\ast$cur=nullptr, \hyperlink{structnode}{Node} $\ast$first=nullptr, \hyperlink{structnode}{Node} $\ast$last=nullptr, \hyperlink{classdeque__base}{\+\_\+deque} $\ast$base=nullptr)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator_acaad7042cd8df81283bd4834ba07ad30}{deque\+\_\+iterator} (const \hyperlink{structdeque__iterator}{iterator} \&T)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+val\+\_\+type \& \hyperlink{structdeque__iterator_aa5b4c3e1340a732ea04721f69170572d}{operator$\ast$} () const
+\begin{DoxyCompactList}\small\item\em Dereference operator. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& \hyperlink{structdeque__iterator_ae15f463b8188f48d74a679935cd968ba}{operator++} ()
+\begin{DoxyCompactList}\small\item\em Operator ++. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \hyperlink{structdeque__iterator_afe780014ad74f573b3eb154e91d0f66c}{operator+} (ptrdiff\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Operator +. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \hyperlink{structdeque__iterator_ab00c940267f110d87de358ba0383a9dc}{operator++} (int)
+\begin{DoxyCompactList}\small\item\em Reverse operator +. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& \hyperlink{structdeque__iterator_af9e3da57b8d1952b0ec5af9c706fefcb}{operator+=} (ptrdiff\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Operator +=. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& \hyperlink{structdeque__iterator_a9f8508814096bc20b9f00c90335f8235}{operator-\/-\/} ()
+\begin{DoxyCompactList}\small\item\em Prefixed operator --. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& \hyperlink{structdeque__iterator_ae9ba6713301a848f537cf476ecb2aacc}{operator-\/-\/} (int)
+\begin{DoxyCompactList}\small\item\em Postfixed operator --. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& \hyperlink{structdeque__iterator_ac935040db37548e0e0abefd88033dd5c}{operator-\/} (ptrdiff\+\_\+t n) const
+\begin{DoxyCompactList}\small\item\em Operator -\/. \end{DoxyCompactList}\item 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& \hyperlink{structdeque__iterator_a1f10cb3090b780023a1454594cae75ca}{operator-\/=} (ptrdiff\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Operator -\/=. \end{DoxyCompactList}\item 
+val\+\_\+type $\ast$ \hyperlink{structdeque__iterator_a454c668b6534c8139be843165a5d1c9e}{operator-\/$>$} () const
+\begin{DoxyCompactList}\small\item\em Operator access. \end{DoxyCompactList}\item 
+\hypertarget{structdeque__iterator_aca87f964d489d8242040cd1c226f82e6}{}\label{structdeque__iterator_aca87f964d489d8242040cd1c226f82e6} 
+val\+\_\+type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (ptrdiff\+\_\+t n) const
+\item 
+\hypertarget{structdeque__iterator_ac8c185706f46d4149e45649f85b9a4e4}{}\label{structdeque__iterator_ac8c185706f46d4149e45649f85b9a4e4} 
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \& {\bfseries operator=} (const \hyperlink{structdeque__iterator}{iterator} \&copy)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structdeque__iterator_a3ad8d3bfae3fd55a466a90e29f34e8f0}{}\label{structdeque__iterator_a3ad8d3bfae3fd55a466a90e29f34e8f0} 
+\hyperlink{structnode}{Node} $\ast$ {\bfseries \+\_\+cur}
+\item 
+\hypertarget{structdeque__iterator_a1af9831fe2a0209c7ef3bffceb619e64}{}\label{structdeque__iterator_a1af9831fe2a0209c7ef3bffceb619e64} 
+\hyperlink{structnode}{Node} $\ast$ {\bfseries \+\_\+first}
+\item 
+\hypertarget{structdeque__iterator_a9328ab34e070900f07e7393296d3a974}{}\label{structdeque__iterator_a9328ab34e070900f07e7393296d3a974} 
+\hyperlink{structnode}{Node} $\ast$ {\bfseries \+\_\+last}
+\item 
+\hypertarget{structdeque__iterator_aff3cc2ab4b8c4e0ce18beb55c5176f44}{}\label{structdeque__iterator_aff3cc2ab4b8c4e0ce18beb55c5176f44} 
+\hyperlink{classdeque__base}{\+\_\+deque} $\ast$ {\bfseries \+\_\+base}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class val\+\_\+type, class ref, class ptr$>$\newline
+class deque\+\_\+iterator$<$ val\+\_\+type, ref, ptr $>$}
+
+Class implemention of iterator of deque. 
+
+\begin{DoxyAuthor}{Author}
+couatl 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25/11/2016
+\end{DoxyDate}
+Implemented as Random Access Iterator 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structdeque__iterator_acaad7042cd8df81283bd4834ba07ad30}{}\label{structdeque__iterator_acaad7042cd8df81283bd4834ba07ad30} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{deque\+\_\+iterator()}{deque\_iterator()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::\hyperlink{structdeque__iterator}{deque\+\_\+iterator} (\begin{DoxyParamCaption}\item[{const \hyperlink{structdeque__iterator}{iterator} \&}]{T }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+So basic copy constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em T} & Object to copy \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{structdeque__iterator_aa5b4c3e1340a732ea04721f69170572d}{}\label{structdeque__iterator_aa5b4c3e1340a732ea04721f69170572d} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+val\+\_\+type\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Dereference operator. 
+
+\begin{DoxyReturn}{Returns}
+Value of current node Dereferencing of \+\_\+cur element of this class 
+\end{DoxyReturn}
+\hypertarget{structdeque__iterator_afe780014ad74f573b3eb154e91d0f66c}{}\label{structdeque__iterator_afe780014ad74f573b3eb154e91d0f66c} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator+@{operator+}}
+\index{operator+@{operator+}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator+ (\begin{DoxyParamCaption}\item[{ptrdiff\+\_\+t}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator +. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the next iterator 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & Number to offset your current iterator Implemented based on prefixed ++. Need to Random Access Iterator \\
+\hline
+\end{DoxyParams}
+\hypertarget{structdeque__iterator_ae15f463b8188f48d74a679935cd968ba}{}\label{structdeque__iterator_ae15f463b8188f48d74a679935cd968ba} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator ++. 
+
+\begin{DoxyReturn}{Returns}
+Object of the next iterator Creates an element if it doesn\textquotesingle{}t exist for now 
+\end{DoxyReturn}
+\hypertarget{structdeque__iterator_ab00c940267f110d87de358ba0383a9dc}{}\label{structdeque__iterator_ab00c940267f110d87de358ba0383a9dc} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator} \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reverse operator +. 
+
+\begin{DoxyReturn}{Returns}
+Copy of the offset iterator 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & Number to offset your current iterator Implemented based on prefixed ++. Need to Random Access Iterator \\
+\hline
+\end{DoxyParams}
+\hypertarget{structdeque__iterator_af9e3da57b8d1952b0ec5af9c706fefcb}{}\label{structdeque__iterator_af9e3da57b8d1952b0ec5af9c706fefcb} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator+= (\begin{DoxyParamCaption}\item[{ptrdiff\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator +=. 
+
+\begin{DoxyReturn}{Returns}
+Offset iterator 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & Number to offset your current iterator Implemented based on operator + \\
+\hline
+\end{DoxyParams}
+\hypertarget{structdeque__iterator_ac935040db37548e0e0abefd88033dd5c}{}\label{structdeque__iterator_ac935040db37548e0e0abefd88033dd5c} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{ptrdiff\+\_\+t}]{n }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator -\/. 
+
+\begin{DoxyReturn}{Returns}
+Object of the offset iterator Based on prefixed operator -- 
+\end{DoxyReturn}
+\hypertarget{structdeque__iterator_a9f8508814096bc20b9f00c90335f8235}{}\label{structdeque__iterator_a9f8508814096bc20b9f00c90335f8235} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prefixed operator --. 
+
+\begin{DoxyReturn}{Returns}
+Object of the previous iterator Creates an element if it doesn\textquotesingle{}t exist for now, even if you\textquotesingle{}re outrange (so-\/so) 
+\end{DoxyReturn}
+\hypertarget{structdeque__iterator_ae9ba6713301a848f537cf476ecb2aacc}{}\label{structdeque__iterator_ae9ba6713301a848f537cf476ecb2aacc} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Postfixed operator --. 
+
+\begin{DoxyReturn}{Returns}
+Object of the previous iterator Based on prefixed operator -- 
+\end{DoxyReturn}
+\hypertarget{structdeque__iterator_a1f10cb3090b780023a1454594cae75ca}{}\label{structdeque__iterator_a1f10cb3090b780023a1454594cae75ca} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+\hyperlink{structdeque__iterator}{deque\+\_\+iterator}\& \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{ptrdiff\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator -\/=. 
+
+\begin{DoxyReturn}{Returns}
+Offset iterator 
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & Number to offset your current iterator Implemented based on operator -\/ \\
+\hline
+\end{DoxyParams}
+\hypertarget{structdeque__iterator_a454c668b6534c8139be843165a5d1c9e}{}\label{structdeque__iterator_a454c668b6534c8139be843165a5d1c9e} 
+\index{deque\+\_\+iterator@{deque\+\_\+iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!deque\+\_\+iterator@{deque\+\_\+iterator}}
+\subsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$class val\+\_\+type, class ref, class ptr$>$ \\
+val\+\_\+type$\ast$ \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, ref, ptr $>$\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Operator access. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to value in the current iterator Returning pointer to the value storing in the current iterator 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{deque_8h}{deque.\+h}\end{DoxyCompactItemize}

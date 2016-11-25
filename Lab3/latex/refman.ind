@@ -1,0 +1,44 @@
+\begin{theindex}
+
+  \item {Deque}, \hyperpage{8}
+  \item {deque$<$ val\+\_\+type $>$}, \hyperpage{7}
+  \item {deque.\+h}, \hyperpage{17}
+  \item {deque\+\_\+base}, \hyperpage{9}
+  \item {deque\+\_\+iterator}
+    \subitem {deque\+\_\+iterator}, \hyperpage{11}
+    \subitem {operator$\ast$}, \hyperpage{11}
+    \subitem {operator+}, \hyperpage{12}
+    \subitem {operator++}, \hyperpage{12}
+    \subitem {operator+=}, \hyperpage{13}
+    \subitem {operator-\/}, \hyperpage{13}
+    \subitem {operator-\/$>$}, \hyperpage{14}
+    \subitem {operator-\/-\/}, \hyperpage{13}
+    \subitem {operator-\/=}, \hyperpage{14}
+  \item {deque\+\_\+iterator$<$ val\+\_\+type, ref, ptr $>$}, 
+		\hyperpage{10}
+
+  \indexspace
+
+  \item {Node}, \hyperpage{14}
+  \item {node$<$ val\+\_\+type $>$}, \hyperpage{15}
+
+  \indexspace
+
+  \item {operator$\ast$}
+    \subitem {deque\+\_\+iterator}, \hyperpage{11}
+  \item {operator+}
+    \subitem {deque\+\_\+iterator}, \hyperpage{12}
+  \item {operator++}
+    \subitem {deque\+\_\+iterator}, \hyperpage{12}
+  \item {operator+=}
+    \subitem {deque\+\_\+iterator}, \hyperpage{13}
+  \item {operator-\/}
+    \subitem {deque\+\_\+iterator}, \hyperpage{13}
+  \item {operator-\/$>$}
+    \subitem {deque\+\_\+iterator}, \hyperpage{14}
+  \item {operator-\/-\/}
+    \subitem {deque\+\_\+iterator}, \hyperpage{13}
+  \item {operator-\/=}
+    \subitem {deque\+\_\+iterator}, \hyperpage{14}
+
+\end{theindex}

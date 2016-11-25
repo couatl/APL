@@ -1,0 +1,52 @@
+\hypertarget{deque_8h}{}\section{deque.\+h File Reference}
+\label{deque_8h}\index{deque.\+h@{deque.\+h}}
+
+
+Implemention of the deque, supporting iterators Created by couatl on 09.\+04.\+16.  
+
+
+{\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classdeque__base}{deque\+\_\+base}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_deque}{Deque}. \end{DoxyCompactList}\item 
+struct \hyperlink{structnode}{node$<$ val\+\_\+type $>$}
+\item 
+class \hyperlink{structdeque__iterator}{deque\+\_\+iterator$<$ val\+\_\+type, ref, ptr $>$}
+\begin{DoxyCompactList}\small\item\em Class implemention of iterator of deque. \end{DoxyCompactList}\item 
+class \hyperlink{classdeque}{deque$<$ val\+\_\+type $>$}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{deque_8h_a83f187a5da708eb4319522a44413c619}{}\label{deque_8h_a83f187a5da708eb4319522a44413c619} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\bool {\bfseries operator==} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it2)
+\item 
+\hypertarget{deque_8h_a91fa43df863c13a8fa366cd4ca086c03}{}\label{deque_8h_a91fa43df863c13a8fa366cd4ca086c03} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\bool {\bfseries operator!=} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it2)
+\item 
+\hypertarget{deque_8h_a9b59b577853374d22c130f374bb77950}{}\label{deque_8h_a9b59b577853374d22c130f374bb77950} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\bool {\bfseries operator$<$} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it2)
+\item 
+\hypertarget{deque_8h_a08e740bc06cef2f6f98b185abaec6c2c}{}\label{deque_8h_a08e740bc06cef2f6f98b185abaec6c2c} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\bool {\bfseries operator$>$} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it2)
+\item 
+\hypertarget{deque_8h_a4d4f5b2d79ecf28b09e0df7fef74d8aa}{}\label{deque_8h_a4d4f5b2d79ecf28b09e0df7fef74d8aa} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\bool {\bfseries operator$<$=} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it2)
+\item 
+\hypertarget{deque_8h_a9af50b575709c67f5ebc81da00e77551}{}\label{deque_8h_a9af50b575709c67f5ebc81da00e77551} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\bool {\bfseries operator$>$=} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ \&it2)
+\item 
+\hypertarget{deque_8h_aa53e1b93efdb04e18c507ef2e2bf9271}{}\label{deque_8h_aa53e1b93efdb04e18c507ef2e2bf9271} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\ptrdiff\+\_\+t {\bfseries operator-\/} (const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ it1, const \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ it2)
+\item 
+\hypertarget{deque_8h_a67db03e80c75d4e01423d7b4329fb189}{}\label{deque_8h_a67db03e80c75d4e01423d7b4329fb189} 
+{\footnotesize template$<$class val\+\_\+type $>$ }\\\hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$ $>$ {\bfseries operator+} (ptrdiff\+\_\+t n, \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$$>$ it)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implemention of the deque, supporting iterators Created by couatl on 09.\+04.\+16. 
+

@@ -1,12 +1,23 @@
-//
-// Created by Надежда on 09.04.16.
-//
+/*!
+*   \file
+*   \brief Implemention of the deque, supporting iterators
+* Created by couatl on 09.04.16.
+*
+*/
+
 
 #ifndef H_W_DEQUEUE_DEQUEUE_H
 #define H_W_DEQUEUE_DEQUEUE_H
 
 #include <cstddef>
 #include <iostream>
+
+/*!
+    \brief Deque
+    \author couatl
+    \version 1.0.1
+    \date 25/11/2016
+*/
 
 class deque_base
 {
@@ -17,6 +28,15 @@ public:
     {}
 };
 
+/*!
+    \class Node
+    \brief Class of the element of deque
+    \author couatl
+    \version 1.0
+    \date 25/11/2016
+
+    So ordinar node of ordinar deque
+*/
 template <class val_type>
 struct node
 {
@@ -26,18 +46,29 @@ struct node
     node* _next;
     node* _prev;
     _deque* _base;
+    //! Default constructor
     node(val_type value = 0, node* next = nullptr, node* prev = nullptr, _deque* base = nullptr):
             _value(value), _prev(prev), _next(next), _base(base)
     {
         if(_base)
             _base->_buff_size++;
     }
+    //! Destructor
     ~node() {
         if (_base)
             _base->_buff_size--;
     }
 };
 
+/*!
+    \class deque_iterator
+    \brief Class implemention of iterator of deque
+    \author couatl
+    \version 1.0
+    \date 25/11/2016
+
+    Implemented as Random Access Iterator
+*/
 template <class val_type, class ref, class ptr>
 struct deque_iterator
 {
@@ -50,8 +81,10 @@ struct deque_iterator
     Node* _first;
     Node* _last;
     _deque* _base;
+    //! Constructs a deque from one base node
     deque_iterator(Node* base): _cur(base), _first(nullptr), _last(nullptr), _base(nullptr)
     {}
+    //! Constructor for initialazing a deque with begin but not with an end
     deque_iterator(Node* cur, Node* first, _deque* base): _cur(cur), _first(first), _base(base)
     {
         _cur->_base = base;
@@ -66,15 +99,31 @@ struct deque_iterator
         _last = t;
         t = nullptr;
     }
+    //! Default constructor
     deque_iterator(Node* cur = nullptr, Node* first = nullptr, Node* last = nullptr, _deque* base = nullptr):
             _cur(cur), _first(first), _last(last), _base(base)
     {}
+    //! Copy constructor
+/*!
+    So basic copy constructor 
+    \param[in] T Object to copy
+*/
     deque_iterator(const iterator& T): _cur(T._cur), _first(T._first), _last(T._last), _base(T._base)
     {}
+    //! Dereference operator
+    /*!
+    \return Value of current node
+    Dereferencing of _cur element of this class
+    */
     val_type& operator* () const
     {
         return _cur->_value;
     }
+    //! Operator ++
+    /*!
+    \return Object of the next iterator
+    Creates an element if it doesn't exist for now
+    */
     deque_iterator& operator++ ()
     {
         if (_cur == _last)
@@ -88,23 +137,46 @@ struct deque_iterator
         _cur = _cur->_next;
         return *this;
     }
+    //! Operator +
+    /*!
+    \return Copy of the next iterator
+    \param[in] n Number to offset your current iterator 
+    Implemented based on prefixed ++. Need to Random Access Iterator
+    */
     deque_iterator operator+ (ptrdiff_t n) const
     {
         for (ptrdiff_t i = 0; i < n; i++)
             ++this;
         return *this;
     }
+    //! Reverse operator +
+    /*!
+    \return Copy of the offset iterator
+    \param[in] n Number to offset your current iterator 
+    Implemented based on prefixed ++. Need to Random Access Iterator
+    */
     deque_iterator operator++ (int)
     {
         deque_iterator t = *this;
         ++(*this);
         return t;
     }
+    //! Operator +=
+    /*!
+    \return Offset iterator
+    \param[in] n Number to offset your current iterator 
+    Implemented based on operator +
+    */
     deque_iterator& operator+= (ptrdiff_t n)
     {
         deque_iterator t = *this;
         return t+n;
     }
+    //! Prefixed operator --
+    /*!
+    \return Object of the previous iterator
+    Creates an element if it doesn't exist for now, even if you're outrange (so-so)
+    */
     deque_iterator& operator-- ()
     {
         if (_cur == _first)
@@ -118,23 +190,44 @@ struct deque_iterator
         _cur = _cur->_prev;
         return *this;
     }
+        //! Postfixed operator --
+    /*!
+    \return Object of the previous iterator
+    Based on prefixed operator --
+    */
     deque_iterator& operator-- (int)
     {
         deque_iterator t = *this;
         --(*this);
         return t;
     }
+    //! Operator -
+    /*!
+    \return Object of the offset iterator
+    Based on prefixed operator --
+    */
     deque_iterator& operator- (ptrdiff_t n) const
     {
         for (ptrdiff_t i = 0; i < n; i++)
             --this;
         return *this;
     }
+    //! Operator -=
+    /*!
+    \return Offset iterator
+    \param[in] n Number to offset your current iterator 
+    Implemented based on operator -
+    */
     deque_iterator& operator-= (ptrdiff_t n)
     {
         deque_iterator t = *this;
         return t-n;
     }
+    //! Operator access
+    /*!
+    \return Pointer to value in the current iterator
+    Returning pointer to the value storing in the current iterator
+    */
     val_type* operator-> () const
     {
         return &(_cur->_value);
@@ -156,8 +249,7 @@ struct deque_iterator
         return *this;
     }
 };
-//без поддержки работы с const_iterator/iterator
-
+// \warning Don't support work with const_iterator/iterator
 template <class val_type>
 inline bool operator== (const deque_iterator<val_type, val_type&, val_type*>& it1,
                         const deque_iterator<val_type, val_type&, val_type*>& it2)
@@ -239,7 +331,6 @@ ptrdiff_t operator-(const deque_iterator<val_type, val_type&, val_type*> it1,
     return i1-i2;
 }
 
-//operator вида 5 + it
 template <class val_type>
 deque_iterator<val_type, val_type&, val_type*> operator+ (ptrdiff_t n, deque_iterator<val_type, val_type&, val_type*> it)
 {
@@ -248,6 +339,15 @@ deque_iterator<val_type, val_type&, val_type*> operator+ (ptrdiff_t n, deque_ite
     return *it;
 }
 
+/*!
+    \class Deque
+    \brief Class implemention of iterator of deque
+    \author couatl
+    \version 1.0
+    \date 25/11/2016
+
+    Big Boss of this project
+*/
 template <class val_type>
 class deque: public deque_base
 {
@@ -278,7 +378,8 @@ public:
             _finish(rAccessIterator._last, t, rAccessIterator._last, this);
         }
     }
-    deque(size_t n, const val_type& var) //fill 2.0
+    //! Fill Contsructor
+    deque(size_t n, const val_type& var)
         :deque_base()
     {
 
@@ -295,13 +396,15 @@ public:
             _finish(rAccessIterator._last, t, rAccessIterator._last, this);
         }
     }
-    deque(deque && move) //move
+    //! Move Constructor
+    deque(deque && move)
         :deque_base(), rAccessIterator(nullptr, nullptr, nullptr, this), _start(nullptr, nullptr, nullptr, this),
           _finish(nullptr, nullptr, nullptr, this)
     {
         this->swap(move);
     }
-    deque(const deque& Obj) //copy
+    //! Copy Constructor
+    deque(const deque& Obj)
     :deque_base()
     {
         this->clear();

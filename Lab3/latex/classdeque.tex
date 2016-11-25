@@ -1,0 +1,143 @@
+\hypertarget{classdeque}{}\section{deque$<$ val\+\_\+type $>$ Class Template Reference}
+\label{classdeque}\index{deque$<$ val\+\_\+type $>$@{deque$<$ val\+\_\+type $>$}}
+Inheritance diagram for deque$<$ val\+\_\+type $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdeque}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdeque_afabb1a53a41a29ed46d83221079cb5e5}{}\label{classdeque_afabb1a53a41a29ed46d83221079cb5e5} 
+typedef \hyperlink{structnode}{node}$<$ val\+\_\+type $>$ {\bfseries Node}
+\item 
+\hypertarget{classdeque_a6af6d2c157f9cb9b85ee9a9b02ff083e}{}\label{classdeque_a6af6d2c157f9cb9b85ee9a9b02ff083e} 
+typedef \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, val\+\_\+type \&, val\+\_\+type $\ast$ $>$ {\bfseries iterator}
+\item 
+\hypertarget{classdeque_a1244237c757ffeb402c7fe2db5a70083}{}\label{classdeque_a1244237c757ffeb402c7fe2db5a70083} 
+typedef \hyperlink{structdeque__iterator}{deque\+\_\+iterator}$<$ val\+\_\+type, const val\+\_\+type \&, const val\+\_\+type $\ast$ $>$ {\bfseries const\+\_\+iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdeque_a2f2dd0e036a1daee291a01a9a03ad9d2}{}\label{classdeque_a2f2dd0e036a1daee291a01a9a03ad9d2} 
+{\bfseries deque} (size\+\_\+t n)
+\item 
+\hypertarget{classdeque_a77986f355bfcf50434543c317b0fa370}{}\label{classdeque_a77986f355bfcf50434543c317b0fa370} 
+\hyperlink{classdeque_a77986f355bfcf50434543c317b0fa370}{deque} (size\+\_\+t n, const val\+\_\+type \&var)
+\begin{DoxyCompactList}\small\item\em Fill Contsructor. \end{DoxyCompactList}\item 
+\hypertarget{classdeque_acb0db0be71c3bf8110742d9fae3f38e1}{}\label{classdeque_acb0db0be71c3bf8110742d9fae3f38e1} 
+\hyperlink{classdeque_acb0db0be71c3bf8110742d9fae3f38e1}{deque} (\hyperlink{classdeque}{deque} \&\&move)
+\begin{DoxyCompactList}\small\item\em Move Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classdeque_afbd8f542cd8abb0dcb03c0846e288228}{}\label{classdeque_afbd8f542cd8abb0dcb03c0846e288228} 
+\hyperlink{classdeque_afbd8f542cd8abb0dcb03c0846e288228}{deque} (const \hyperlink{classdeque}{deque} \&Obj)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classdeque_a38f49122a62ca9156a65b201f3f02523}{}\label{classdeque_a38f49122a62ca9156a65b201f3f02523} 
+\hyperlink{structdeque__iterator}{iterator} {\bfseries begin} ()
+\item 
+\hypertarget{classdeque_aa7e5ba5256ea1ada1420b020df653dbd}{}\label{classdeque_aa7e5ba5256ea1ada1420b020df653dbd} 
+\hyperlink{structdeque__iterator}{const\+\_\+iterator} {\bfseries begin} () const
+\item 
+\hypertarget{classdeque_a660c98a282008bbceead5bbe77b97039}{}\label{classdeque_a660c98a282008bbceead5bbe77b97039} 
+\hyperlink{structdeque__iterator}{iterator} {\bfseries end} ()
+\item 
+\hypertarget{classdeque_ab2b99ae02be5ad7bce0d7a5f592342be}{}\label{classdeque_ab2b99ae02be5ad7bce0d7a5f592342be} 
+\hyperlink{structdeque__iterator}{const\+\_\+iterator} {\bfseries end} () const
+\item 
+\hypertarget{classdeque_a1791c707b5e84de39339d81c80765f58}{}\label{classdeque_a1791c707b5e84de39339d81c80765f58} 
+\hyperlink{structdeque__iterator}{const\+\_\+iterator} {\bfseries cend} () const
+\item 
+\hypertarget{classdeque_aff9557600015f16555ae8997ca2e0ed3}{}\label{classdeque_aff9557600015f16555ae8997ca2e0ed3} 
+\hyperlink{structdeque__iterator}{const\+\_\+iterator} {\bfseries cbegin} () const
+\item 
+\hypertarget{classdeque_ade2072ef11e762044cb3157df1932751}{}\label{classdeque_ade2072ef11e762044cb3157df1932751} 
+\hyperlink{classdeque}{deque} \& {\bfseries operator=} (const \hyperlink{classdeque}{deque} \&Obj)
+\item 
+\hypertarget{classdeque_aa6e3f78f8aa043f605b1b723af3ff3de}{}\label{classdeque_aa6e3f78f8aa043f605b1b723af3ff3de} 
+\hyperlink{classdeque}{deque} \& {\bfseries operator=} (\hyperlink{classdeque}{deque} \&\&x)
+\item 
+\hypertarget{classdeque_a5cedf7c96add3dbdada01afb3d1a6106}{}\label{classdeque_a5cedf7c96add3dbdada01afb3d1a6106} 
+size\+\_\+t {\bfseries size} () const
+\item 
+\hypertarget{classdeque_aab87563431ccaaf0502d036c895294aa}{}\label{classdeque_aab87563431ccaaf0502d036c895294aa} 
+void {\bfseries resize} (size\+\_\+t n)
+\item 
+\hypertarget{classdeque_a3c50a0c308fa95d7ebc7b6f8a7b51834}{}\label{classdeque_a3c50a0c308fa95d7ebc7b6f8a7b51834} 
+bool {\bfseries empty} ()
+\item 
+\hypertarget{classdeque_a1e8f01b43e7d197742a1afbd758ef90d}{}\label{classdeque_a1e8f01b43e7d197742a1afbd758ef90d} 
+val\+\_\+type \& {\bfseries at} (size\+\_\+t n)
+\item 
+\hypertarget{classdeque_ad802f6c828533e0c37dbda15d55d2c64}{}\label{classdeque_ad802f6c828533e0c37dbda15d55d2c64} 
+const val\+\_\+type \& {\bfseries at} (size\+\_\+t n) const
+\item 
+\hypertarget{classdeque_aedc550f2b294e23a54ca35362c336c67}{}\label{classdeque_aedc550f2b294e23a54ca35362c336c67} 
+val\+\_\+type \& {\bfseries front} ()
+\item 
+\hypertarget{classdeque_af23d9179c1f8d868de051b594d15eeca}{}\label{classdeque_af23d9179c1f8d868de051b594d15eeca} 
+const val\+\_\+type \& {\bfseries front} () const
+\item 
+\hypertarget{classdeque_a54b65ee808502e4b1097fdb679da245c}{}\label{classdeque_a54b65ee808502e4b1097fdb679da245c} 
+val\+\_\+type \& {\bfseries back} ()
+\item 
+\hypertarget{classdeque_aa87b733006573d31548ee2b00c4c6146}{}\label{classdeque_aa87b733006573d31548ee2b00c4c6146} 
+const val\+\_\+type \& {\bfseries back} () const
+\item 
+\hypertarget{classdeque_aeb97a0199f6d97b25c67cdf255706f93}{}\label{classdeque_aeb97a0199f6d97b25c67cdf255706f93} 
+void {\bfseries push\+\_\+front} (const val\+\_\+type \&val)
+\item 
+\hypertarget{classdeque_a30d370edcc61df0873dea70da51b0f21}{}\label{classdeque_a30d370edcc61df0873dea70da51b0f21} 
+void {\bfseries push\+\_\+back} (const val\+\_\+type \&val)
+\item 
+\hypertarget{classdeque_a058b86dd11d14e61a833f745ba3b69cf}{}\label{classdeque_a058b86dd11d14e61a833f745ba3b69cf} 
+void {\bfseries pop\+\_\+back} ()
+\item 
+\hypertarget{classdeque_ab4ddac9adc62291162d2f8ad724b2166}{}\label{classdeque_ab4ddac9adc62291162d2f8ad724b2166} 
+void {\bfseries pop\+\_\+front} ()
+\item 
+\hypertarget{classdeque_a572cafe1303f6eadd1dbe6fc92c08a23}{}\label{classdeque_a572cafe1303f6eadd1dbe6fc92c08a23} 
+void {\bfseries clear} ()
+\item 
+\hypertarget{classdeque_ad2e31d9c1feb97d21ad782f1c5b198ff}{}\label{classdeque_ad2e31d9c1feb97d21ad782f1c5b198ff} 
+void {\bfseries assign} (size\+\_\+t n, const val\+\_\+type \&val)
+\item 
+\hypertarget{classdeque_a188c35dd65f58513b29f5c10eb49bd11}{}\label{classdeque_a188c35dd65f58513b29f5c10eb49bd11} 
+\hyperlink{structdeque__iterator}{iterator} {\bfseries insert} (\hyperlink{structdeque__iterator}{const\+\_\+iterator} position, const val\+\_\+type \&val)
+\item 
+\hypertarget{classdeque_ab7f1ec9c96276c7e5b98b96d117b293b}{}\label{classdeque_ab7f1ec9c96276c7e5b98b96d117b293b} 
+{\footnotesize template$<$class Input\+Iterator $>$ }\\\hyperlink{structdeque__iterator}{iterator} {\bfseries insert} (\hyperlink{structdeque__iterator}{const\+\_\+iterator} position, Input\+Iterator first, Input\+Iterator last)
+\item 
+\hypertarget{classdeque_a203a46e73cb25b06fd0afa309b2c0c20}{}\label{classdeque_a203a46e73cb25b06fd0afa309b2c0c20} 
+val\+\_\+type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t n)
+\item 
+\hypertarget{classdeque_a3158df56ba89eb4ad9745cb69adf1806}{}\label{classdeque_a3158df56ba89eb4ad9745cb69adf1806} 
+const val\+\_\+type \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (size\+\_\+t n) const
+\item 
+\hypertarget{classdeque_a58cf745ac219782f3454dbaf82169b62}{}\label{classdeque_a58cf745ac219782f3454dbaf82169b62} 
+void {\bfseries swap} (\hyperlink{classdeque}{deque} \&b)
+\item 
+\hypertarget{classdeque_ad8c083d221d558daeef4e34f5fc7d742}{}\label{classdeque_ad8c083d221d558daeef4e34f5fc7d742} 
+\hyperlink{structdeque__iterator}{iterator} {\bfseries erase} (\hyperlink{structdeque__iterator}{const\+\_\+iterator} position)
+\item 
+\hypertarget{classdeque_a9f2317bf487ca9ab7ab011bc9d99e214}{}\label{classdeque_a9f2317bf487ca9ab7ab011bc9d99e214} 
+\hyperlink{structdeque__iterator}{iterator} {\bfseries erase} (\hyperlink{structdeque__iterator}{const\+\_\+iterator} first, \hyperlink{structdeque__iterator}{const\+\_\+iterator} last)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdeque_a91b6e22358519a9e5f73d1eac2da9947}{}\label{classdeque_a91b6e22358519a9e5f73d1eac2da9947} 
+static size\+\_\+t {\bfseries max\+\_\+size} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdeque_a280e7b5814351f71d303a6b590e40b49}{}\label{classdeque_a280e7b5814351f71d303a6b590e40b49} 
+static size\+\_\+t {\bfseries \+\_\+maxsize} = 100
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{deque_8h}{deque.\+h}\end{DoxyCompactItemize}
